@@ -1,0 +1,67 @@
+ul li {
+            transition: color 0.3s;
+            font-size: large;
+        }
+body{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#subTitle{
+    font-size: larger;
+}
+        /* Style for the background image */
+.background-image {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 500px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+p{
+    text-align: center;
+}
+#fruList{
+    list-style-type: none;
+    letter-spacing: 1px;
+}
+#vegList{
+    list-style-type: none;
+    letter-spacing: 1px;
+}
+#header {
+            position: relative;
+        }
+        #header img {
+            position: absolute;
+            top: -40px;
+            left: 10px;
+        }
+   #header {
+            color: white;
+            padding: 10px 0;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        li {
+            margin: 10px;
+            text-align: center;
+        }
+        img {
+            width: 100px; /* Set the width of the images */
+            height: 100px; /* Set the height of the images */
+            border-radius: 10px;
+        }
+        .price {
+            color: #FF5722; /* Price color */
+            font-weight: bold;
+            font-size: 1.2em; /* Price font size */
+        }
