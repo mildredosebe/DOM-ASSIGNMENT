@@ -65,3 +65,4 @@ backgroundDiv.className = "background-image";
 backgroundDiv.style.backgroundImage = "url('stall.jpg')";
 const titleElement = document.getElementById("title");
 titleElement.insertAdjacentElement('afterend', backgroundDiv);
+
