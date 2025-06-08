@@ -1,68 +1,52 @@
-document.body.style.backgroundColor = "silver";
-document.getElementById("title").style.color = "green";
-document.getElementById("title").style.textAlign = "center";
-document.getElementById('title').style.fontFamily = 'cursive';
-document.getElementById('title').style.fontSize = '60px';
-const h3Tags = document.getElementsByTagName("h3");
-for (let i = 0; i < h3Tags.length; i++) {
-    h3Tags[i].style.textTransform = "uppercase";
-}
-const fruitList = document.getElementById("fruList");
-const newFruit = document.createElement("li");
-const fruitDiv = document.createElement("div");
-fruitDiv.className = "background-image";
-fruitDiv.style.backgroundImage = "url('oranges.jpg')";
-fruitDiv.style.width='100px';
-fruitDiv.style.height='100px';
-const fruitName = document.createElement("div");
-fruitName.textContent = "Oranges";
-fruitName.style.marginTop='-1px';
-const fruitPrice = document.createElement("div");
-fruitPrice.className = "price";
-fruitPrice.textContent = "$5.00";
-fruitDiv.appendChild(fruitName);
-fruitName.appendChild(fruitPrice);
-newFruit.appendChild(fruitDiv);
-fruitList.appendChild(newFruit);
-const vegetableList = document.getElementById("vegetableList");
-const newVegetable = document.createElement("li");
-const vegDiv=document.createElement("div")
-vegDiv.className='img';
-vegDiv.style.backgroundImage="url('images/carrots.jpg')";
-vegDiv.style.width='100px';
-vegDiv.style.height='100px';
-vegDiv.style.borderRadius='20px';
-const vegName=document.createElement("div");
-vegName.textContent = "Carrots";
-newVegetable.appendChild(vegDiv)
-vegetableList.appendChild(newVegetable);
-vegDiv.appendChild(vegName)
-function addHoverEffect(list) {
-    const items = list.getElementsByTagName("li");
-    for (let item of items) {
-        item.addEventListener("mouseenter", function () {
-            item.style.color = "green";
-        });
-        item.addEventListener("mouseleave", function () {
-            item.style.color = "";
-        });
-    }
-}
-function addLogo() {
-    const logo = document.createElement('img');
-    logo.src = 'images/greenkiosklogo.png';
-    logo.alt = 'Website Logo';
-    logo.style.width = '200px';
-    logo.style.height = 'auto';
-    const header = document.getElementById('header');
-    header.appendChild(logo);
-}
-addLogo();
-addHoverEffect(fruitList);
-addHoverEffect(vegetableList);
-const backgroundDiv = document.createElement("div");
-backgroundDiv.className = "background-image";
-backgroundDiv.style.backgroundImage = "url('stall.jpg')";
-const titleElement = document.getElementById("title");
-titleElement.insertAdjacentElement('afterend', backgroundDiv);
+let cartCount = 0;
+        const cartCountElement = document.querySelector('.cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                cartCount++;
+                cartCountElement.textContent = cartCount;
+                
+                // Visual feedback
+                this.style.background = '#2ecc71';
+                this.innerHTML = '<i class="fas fa-check"></i> Added!';
+                
+                setTimeout(() => {
+                    this.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                    this.innerHTML = '<i class="fas fa-plus"></i> Add to Cart';
+                }, 1500);
+            });
+        });
+      const productItems = document.querySelectorAll('.product-item');
+        productItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('click', function() {
+            document.querySelector('#fruList').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+
+        
+        const welcomeTitle = document.querySelector('.welcome-title');
+        const hour = new Date().getHours();
+        let greeting = 'Welcome to';
+        
+        if (hour < 12) {
+            greeting = 'Good Morning! Welcome to';
+        } else if (hour < 18) {
+            greeting = 'Good Afternoon! Welcome to';
+        } else {
+            greeting = 'Good Evening! Welcome to';
+        }
+        
+        welcomeTitle.textContent = `${greeting} Greens Kiosk`;

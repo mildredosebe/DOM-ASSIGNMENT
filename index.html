@@ -3,54 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link rel="stylesheet" href="./style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    <title>Greens Kiosk - Fresh Fruits & Vegetables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header id="header">
-    <h1 id="title">Welcome to Greens Kiosk</h1>
-    <i class="fa-solid fa-cart-shopping"></i>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/peach.jpg" alt="Greens Kiosk Logo">
+                    <h1 id="title">Greens Kiosk</h1>
+                </div>
+                <div class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
     </header>
-<p id ='subTitle'>We sell fruits and vegetables</p>
-<h3>Fruits</h3>
- <ul id="fruList">
-        <li>
-            <img src="peach.jpg" alt="Peach">
-            <div>Peach</div>
-            <div class="price">KSH 150</div>
-        </li>
-        <li>
-            <img src="watermelon.jpg" alt="watermelon">
-            <div>Watermelon</div>
-            <div class="price">Ksh200</div>
-        </li>
-        <li>
-            <img src="banana.jpg" alt="banana">
-            <div>banana</div>
-            <div class="price">ksh100</div>
-        </li>
-    </ul>
-    <h3>Vegetables</h3>
-    <ul id="vegetableList">
-        <li>
-            <img src="brocolli.jpg" alt="Broccoli">
-            <div>Brocolli</div>
-            <div class="price">KSH 80</div>
-        </li>
-        <li>
-            <img src="Tomatoes.jpg" alt="Tomatoes">
-            <div>Tomatoes</div>
-            <div class="price">KSH 120</div>
-        </li>
-        <li>
-            <img src="cabage.jpg" alt="cabbage">
-            <div>cabbage</div>
-            <div class="price">KSH 100</div>
-        </li>
-    </ul>
-<script src="index.js"></script>
 
+    <div class="container">
+        <h1 class="welcome-title">Welcome to Greens Kiosk</h1>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2>Fresh & Organic Produce</h2>
+                <p>Locally sourced, sustainably grown fruits and vegetables</p>
+                <button class="cta-button">Shop Now</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>Seasonal Fruits</h3>
+        </div>
+        <ul class="product-grid" id="fruList">
+            <li class="product-item">
+                <img src="images/peach.jpg" alt="Fresh Peach" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Peach</div>
+                <div class="product-name">Peach</div>
+                <div class="product-price">KSH 150</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+            <li class="product-item">
+                <img src="images/watermelon.jpg" alt="Juicy Watermelon" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Watermelon</div>
+                <div class="product-name">Watermelon</div>
+                <div class="product-price">KSH 200</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+            <li class="product-item">
+                <img src="images/banana.jpg" alt="Ripe Banana" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Banana</div>
+                <div class="product-name">Banana</div>
+                <div class="product-price">KSH 100</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+            <li class="product-item">
+                <img src="images/apple.jpg" alt="Fresh Apple" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Apple</div>
+                <div class="product-name">Apple</div>
+                <div class="product-price">KSH 120</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+        </ul>
+
+        <div class="section-header">
+            <h3>Fresh Vegetables</h3>
+        </div>
+        <ul class="product-grid" id="vegetableList">
+            <li class="product-item">
+                <img src="images/broccoli.jpg" alt="Fresh Broccoli" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Broccoli</div>
+                <div class="product-name">Broccoli</div>
+                <div class="product-price">KSH 80</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+            <li class="product-item">
+                <img src="images/tomatoes.jpg" alt="Fresh Tomatoes" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Tomatoes</div>
+                <div class="product-name">Tomatoes</div>
+                <div class="product-price">KSH 120</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+            <li class="product-item">
+                <img src="images/cabbage.jpg" alt="Fresh Cabbage" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Cabbage</div>
+                <div class="product-name">Cabbage</div>
+                <div class="product-price">KSH 100</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+            <li class="product-item">
+                <img src="images/spinach.jpg" alt="Fresh Spinach" class="product-image" onerror="this.style.display='none';this.parentNode.querySelector('.image-placeholder').style.display='flex'">
+                <div class="image-placeholder" style="display: none;">Spinach</div>
+                <div class="product-name">Spinach</div>
+                <div class="product-price">KSH 90</div>
+                <button class="add-to-cart">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Greens Kiosk</h4>
+                    <p>Providing fresh, organic produce since 2010. We source directly from local farmers to bring you the best quality fruits and vegetables.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi</li>
+                        <li><i class="fas fa-envelope"></i> info@greenskiosk.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 8AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Greens Kiosk. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
